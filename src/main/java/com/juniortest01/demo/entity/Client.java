@@ -16,11 +16,11 @@ public class Client extends AbstractEntity{
     private String email;
     private String passport;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_bank", nullable = false)
-    private Bank bank;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_credit", nullable = false)
-    private ClientCredit clientCredit;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="id_bank", nullable = false)
+//    private Bank bank;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="id_credit", nullable = false)
+//    private ClientCredit clientCredit;
 }
