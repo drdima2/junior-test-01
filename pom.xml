@@ -22,6 +22,28 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+
+		<!-- db -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<!--            <version>9.4.1208.jre7</version>-->
+			<version>42.2.1</version>
+		</dependency>
+		<!-- end of db -->
+
+
+
+		<!-- jpa -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- end of jpa -->
+
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
