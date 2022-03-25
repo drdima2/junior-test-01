@@ -5,6 +5,7 @@ package com.juniortest01.demo.entity;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -31,8 +32,7 @@ public class Client extends AbstractEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_bank", nullable = false)
     private Bank bank;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="id_credit", nullable = false)
-//    private ClientCredit clientCredit;
+
+    @OneToMany(mappedBy = "client" , cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ClientCredit> clientCreditList;
 }

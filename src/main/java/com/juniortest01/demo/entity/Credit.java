@@ -3,6 +3,7 @@ package com.juniortest01.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,6 +20,14 @@ public class Credit extends AbstractEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_bank", nullable = false)
     private Bank bank;
+
+
+    @OneToMany(mappedBy = "credit" , cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ClientCredit> clientCreditList;
+
+
+
+
 
 
 }
