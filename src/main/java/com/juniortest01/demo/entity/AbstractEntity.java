@@ -6,10 +6,11 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @MappedSuperclass
 @Getter @Setter @ToString
-public abstract class AbstractEntity {
+public abstract class AbstractEntity implements Serializable {
     public static final int START_SEQ = 100000;
 
     @Id

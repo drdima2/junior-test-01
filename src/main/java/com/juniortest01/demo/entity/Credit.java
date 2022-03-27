@@ -1,11 +1,15 @@
 package com.juniortest01.demo.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+//@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "credit")
 public class Credit extends AbstractEntity{

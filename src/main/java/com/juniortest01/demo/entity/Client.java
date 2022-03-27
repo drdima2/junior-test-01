@@ -2,11 +2,15 @@ package com.juniortest01.demo.entity;
 
 
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "client")
 public class Client extends AbstractEntity{
