@@ -39,10 +39,12 @@ public class Client {
     }
 
     public void addCreditOfferToClient(CreditOffer creditOffer) {
+        creditOffer.setClient(this);
         creditOffers.add(creditOffer);
     }
 
     public void removeCreditOfferFromClient(CreditOffer creditOffer) {
+        creditOffer.setClient(null);
         creditOffers.remove(creditOffer);
     }
 

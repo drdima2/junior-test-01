@@ -15,7 +15,7 @@ public class CreditOffer {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "credit_id")
     private Credit credit;
 

@@ -1,6 +1,7 @@
 package com.juniortest01.demo.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "credit")
@@ -21,11 +22,21 @@ public class Credit {
     @JoinColumn(name = "bank_id")
     private Bank bank;
 
-    @OneToOne(cascade = CascadeType.ALL,
+    @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "credit")
-    private CreditOffer creditOffer;
+    private List<CreditOffer> creditOffers;
 
     public Credit() {
+    }
+
+    public void addCreditOfferToCredit(CreditOffer creditOffer) {
+        creditOffer.setCredit(this);
+        creditOffers.add(creditOffer);
+    }
+
+    public void removeCreditOfferFromCredit(CreditOffer creditOffer) {
+        creditOffer.setCredit(null);
+        creditOffers.remove(creditOffer);
     }
 
     public int getId() {
@@ -60,12 +71,12 @@ public class Credit {
         this.bank = bank;
     }
 
-    public CreditOffer getCreditOffer() {
-        return creditOffer;
+    public List<CreditOffer> getCreditOffers() {
+        return creditOffers;
     }
 
-    public void setCreditOffer(CreditOffer creditOffer) {
-        this.creditOffer = creditOffer;
+    public void setCreditOffers(List<CreditOffer> creditOffers) {
+        this.creditOffers = creditOffers;
     }
 }
 
