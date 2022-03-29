@@ -25,8 +25,8 @@ public class PaymentSchedule {
     @Column(name = "credit_interest_repayment")
     private double creditInterestRepayment;
 
-    @OneToOne(cascade = CascadeType.ALL,
-            mappedBy = "paymentSchedule")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "credit_offer_id")
     private CreditOffer creditOffer;
 
     public PaymentSchedule() {

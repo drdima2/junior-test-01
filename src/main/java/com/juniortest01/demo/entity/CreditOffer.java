@@ -22,9 +22,11 @@ public class CreditOffer {
     @Column(name = "credit_amount")
     private double creditAmount;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "payment_schedule_id")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "creditOffer")
     private PaymentSchedule paymentSchedule;
+
+    @Column(name = "is_payed")
+    private boolean isPayed;
 
     public CreditOffer() {
     }
